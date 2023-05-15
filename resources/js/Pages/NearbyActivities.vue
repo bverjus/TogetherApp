@@ -10,8 +10,7 @@ defineProps({
     activities: Array
 });
 
-// const LocationStore = useLocationStore();
-
+// Formatage de la date pour avoir le jour et le mois 
 const formatDate = (dateString) => {
   const options = { day: 'numeric', month: 'long' };
   const date = new Date(dateString);
@@ -22,10 +21,9 @@ const formatDate = (dateString) => {
 onMounted(async () => {
     const activitiesStore = useActivitiesStore();
     await activitiesStore.fetchActivities();
-    
+
+    // Activitées triées par distance
     activitiesByDist.value = activitiesStore.getActivitiesSortedByDistance;
-    // Afficher les évaluations reçues par l'utilisateur
-  console.log(activitiesByDist.value[0].user.ratingsReceived);
 
 });
 </script>

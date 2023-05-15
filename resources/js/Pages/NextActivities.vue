@@ -10,8 +10,7 @@ defineProps({
     activities: Array
 });
 
-// const LocationStore = useLocationStore();
-
+// Formatage de la date pour avoir le jour et le mois 
 const formatDate = (dateString) => {
   const options = { day: 'numeric', month: 'long' };
   const date = new Date(dateString);
@@ -22,6 +21,7 @@ onMounted(async () => {
     const activitiesStore = useActivitiesStore();
     await activitiesStore.fetchActivities();
     
+    // Activités triées par date 
     activitiesByDate.value = activitiesStore.getActivitiesSortedByDate;
 });
 </script>

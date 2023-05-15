@@ -2,7 +2,6 @@
 import { router } from '@inertiajs/vue3'
 import { reactive } from 'vue'
 import { ref } from 'vue';
-// import { Storage } from 'laravel-jetstream';
 import Footer from './Footer.vue';
 
 const data = reactive({
@@ -22,8 +21,9 @@ const data = reactive({
 });
 
 const successMessage = ref('');
+const image = ref(null);
 
-
+//Envoie du formulaire 
 const submitForm = async () => {
     console.log(data);
     await router.post('/activities/store', data);
@@ -34,8 +34,9 @@ const submitForm = async () => {
       }, 2000);
 }
 
-const image = ref(null);
 
+
+// Gestion de l'image 
 const handleImageUpload = (event) => {
   const file = event.target.files[0];
   image.value = file;

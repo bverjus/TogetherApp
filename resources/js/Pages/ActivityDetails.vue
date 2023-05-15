@@ -9,19 +9,21 @@ const activity = ref(null);
 
 const props = defineProps({activityId : {type: Number}});
 
+// Formattage de la date pour récupérer le jour et le mois
 const formatDate = (dateString) => {
   const options = { day: 'numeric', month: 'long' };
   const date = new Date(dateString);
   return date.toLocaleDateString(undefined, options);
 };
 
+// Formattage de la date pour récupérer l'heure
 const formatTime = (dateString) => {
   const options = { hour: 'numeric', minute: 'numeric', hour12: false };
   const date = new Date(dateString);
   return date.toLocaleTimeString(undefined, options);
 };
 
-
+// Récupération de l'activité par son id et affichage de la map
 onMounted(async () => {
     const activitiesStore = useActivitiesStore();
     await activitiesStore.fetchActivities();
@@ -41,11 +43,7 @@ onMounted(async () => {
 
 
 </script>
-<template>
-    <!-- <h1>Test : {{ props.activityId }}</h1>
-    {{ activity }} --> 
-
-    
+<template>  
     <div class="w-full relative" >
         <img :src="activity && activity.image" alt="" class="w-full h-full object-cover object-center">
         <div class="absolute bottom-0 left-0 w-full h-[20%] bg-black opacity-40 z-10"></div>

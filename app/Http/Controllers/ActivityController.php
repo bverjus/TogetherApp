@@ -12,26 +12,51 @@ use Illuminate\Support\Facades\Storage;
 
 class ActivityController extends Controller
 {
+    /**
+     * Affiche la page du tableau de bord avec la liste des activités.
+     *
+     * @return \Inertia\Response
+     */
     public function index()
     {
         $activities = Activity::with(['category', 'user'])->withCount('participants')->get();
         return Inertia::render('Dashboard', ['activities' =>$activities]);
     }
 
+    /**
+     * Récupère les activités avec leurs distances par rapport aux coordonnées de l'utilisateur.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function activitiesWithDistances(Request $request)
     {
+        // Récupère les coordonnées de l'utilisateur depuis la requête
         $userLat = floatval($request->input('lat'));
         $userLon = floatval($request->input('lon'));
 
+        // Récupère toutes les activités avec leurs catégories, utilisateurs et le nombre de participants
         $activities = Activity::with(['category', 'user'])->withCount('participants')->get();
 
+        // Calcule et ajoute la distance de chaque activité par rapport aux coordonnées de l'utilisateur
         foreach ($activities as $activity) {
             $activity->distance = $this->distance($userLat, $userLon, floatval($activity->lat), floatval($activity->lon));
         }
         
+        // Retourne les activités avec leurs distances sous forme de réponse JSON
         return response()->json($activities);
     }
 
+    /**
+     * Calcule la distance orthodromique entre deux points géographiques en utilisant la formule de Haversine.
+     *
+     * @param float $userLat     Latitude de l'utilisateur.
+     * @param float $userLon     Longitude de l'utilisateur.
+     * @param float $activityLat Latitude de l'activité.
+     * @param float $activityLon Longitude de l'activité.
+     *
+     * @return float Distance en kilomètres.
+     */
     function distance($userLat, $userLon, $activityLat, $activityLon) 
     {
         $earthRadius = 6371; // Rayon moyen de la Terre en kilomètres
@@ -54,11 +79,22 @@ class ActivityController extends Controller
         return $distance;
     }
 
+    /**
+     * Affiche le détail d'une activité
+     *
+     * @param [type] $id
+     * @return void
+     */
     function show($id)
     {
         return Inertia::render('ActivityDetails',  ['activityId' =>$id]);
     }
 
+    /**
+     * Récupère toutes les catégories et affiche le formulaire d'ajout 
+     *
+     * @return void
+     */
     function create ()
     {
 
@@ -66,6 +102,14 @@ class ActivityController extends Controller
         return Inertia::render('AddActivity', ['categories' => $categories]);
     }
 
+
+    /**
+     * Stocke une nouvelle activité dans la base de données.
+     *
+     * @param Request $request Les données de la requête.
+     *
+     * @return RedirectResponse
+     */
     function store(Request $request)
     {
         $userId = Auth::id();
