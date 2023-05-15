@@ -1,0 +1,134 @@
+<script setup></script>
+<template>
+    <main class="bg-gradient-to-b from-myblue-light to-myblue-dark h-screen pb-24 overflow-y-scroll">
+        <h1 class="text-4xl text-slate-50 font-black pt-10 pl-4">Together</h1>
+        <div>
+            <input type="search" name="" id="" placeholder="Chercher des activités" class=" mt-12 rounded-xl bg-myblue-searchbar ml-4 placeholder-slate-100 w-3/5">
+            <i class="fa-solid fa-filter fa-xl ml-6" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-map fa-xl ml-4" style="color: #ffffff;"></i>
+        </div>
+        <div class="ml-4 mt-6 flex  text-white max-w-full overflow-x-scroll">
+            <div class="w-24 h-24 text-center shrink-0">
+                <img class='rounded-full w-5/6 mx-auto' src="https://picsum.photos/207">
+                <p class="text-xs">Randonnée</p>
+            </div>
+            <div class="w-24 h-24 text-center shrink-0">
+                <img class='rounded-full w-5/6 mx-auto' src="https://picsum.photos/203">
+                <p class="text-xs">Vélo</p>
+            </div>
+            <div class="w-24 h-24 text-center shrink-0">
+                <img class='rounded-full w-5/6 mx-auto' src="https://picsum.photos/202">
+                <p class="text-xs">Moto</p>
+            </div>
+            <div class="w-24 h-24 text-center shrink-0">
+                <img class='rounded-full w-5/6 mx-auto' src="https://picsum.photos/260">
+                <p class="text-xs">Pêche</p>
+            </div>
+            <div class="w-24 h-24 text-center shrink-0">
+                <img class='rounded-full w-5/6 mx-auto' src="https://picsum.photos/205">
+                <p class="text-xs">Kayak</p>
+            </div>
+        </div>
+        <h2 class="text-xl text-slate-50 font-semibold pl-4 mt-8">Activités à proximité</h2>
+        <!-- Activity -->
+        <section class="mx-2 mt-4 text-slate-50 max-w-full overflow-x-scroll flex ">
+            <article class="bg-myblue-searchbar w-1/2 h-72 rounded-2xl shadow-md ml-2 shrink-0">
+                <div class="w-full relative">
+                    <span class="absolute top-2 left-2 z-20 bg-white text-myblue-dark font-bold px-2 rounded-md">Randonnée</span>
+                    <img  class="w-full h-32 rounded-t-2xl z-0" src="https://picsum.photos/150">
+                    <span class="absolute bottom-2 right-2 z-10 font-bold">11 Mars</span>
+                </div>
+                <div class="ml-4 mt-4 flex flex-col">
+                    <h3 class="font-semibold">Randonnée charmante ...</h3>
+                    <p class="text-green-400 text-sm font-light">Ninglinspo, 10km</p>
+                    <p class="text-sm font-light">Patrick <span>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-regular fa-star"></i>
+                        </span>
+                    </p>
+                    <p class=" mb-2 text-sm font-light">1/5 participants</p>
+                    <a class="text-center bg-green-500  px-8 no-underline text-white rounded-full max-w-fit">Infos</a>
+                </div>
+            </article>
+            <article class="bg-myblue-searchbar w-1/2 h-72 rounded-2xl shadow-md ml-2 shrink-0">
+                <div class="w-full relative">
+                    <span class="absolute top-2 left-2 z-20 bg-white text-myblue-dark font-bold px-2 rounded-md">Randonnée</span>
+                    <img  class="w-full h-32 rounded-t-2xl z-0" src="https://picsum.photos/150">
+                    <span class="absolute bottom-2 right-2 z-10 font-bold">11 Mars</span>
+                </div>
+                <div class="ml-4 mt-4 flex flex-col">
+                    <h3 class="font-semibold">Randonnée charmante ...</h3>
+                    <p class="text-green-400 text-sm font-light">Ninglinspo, 10km</p>
+                    <p class="text-sm font-light">Patrick <span>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-regular fa-star"></i>
+                        </span>
+                    </p>
+                    <p class=" mb-2 text-sm font-light">1/5 participants</p>
+                    <a class="text-center bg-green-500  px-8 no-underline text-white rounded-full max-w-fit">Infos</a>
+                </div>
+            </article>
+        </section>
+
+        <h2 class="text-xl text-slate-50 font-semibold pl-4 mt-8">Prochaines activités</h2>
+
+        <!-- Prochaines activités -->
+        <section class="ml-2 mt-4 text-slate-50 max-w-full overflow-x-scroll flex ">
+            <article class="bg-myblue-searchbar w-1/2 h-72 rounded-2xl shadow-md ml-2 shrink-0">
+                <div class="w-full relative">
+                    <span class="absolute top-2 left-2 z-20 bg-white text-myblue-dark font-bold px-2 rounded-md">Randonnée</span>
+                    <img  class="w-full h-32 rounded-t-2xl z-0" src="https://picsum.photos/150">
+                    <span class="absolute bottom-2 right-2 z-10 font-bold">11 Mars</span>
+                </div>
+                <div class="ml-4 mt-4 flex flex-col">
+                    <h3 class="font-semibold">Randonnée charmante ...</h3>
+                    <p class="text-green-400 text-sm font-light">Ninglinspo, 10km</p>
+                    <p class="text-sm font-light">Patrick <span>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-regular fa-star"></i>
+                        </span>
+                    </p>
+                    <p class=" mb-2 text-sm font-light">1/5 participants</p>
+                    <a class="text-center bg-green-500  px-8 no-underline text-white rounded-full max-w-fit">Infos</a>
+                </div>
+            </article>
+            <article class="bg-myblue-searchbar w-1/2 h-72 rounded-2xl shadow-md ml-2 shrink-0">
+                <div class="w-full relative">
+                    <span class="absolute top-2 left-2 z-20 bg-white text-myblue-dark font-bold px-2 rounded-md">Randonnée</span>
+                    <img  class="w-full h-32 rounded-t-2xl z-0" src="https://picsum.photos/150">
+                    <span class="absolute bottom-2 right-2 z-10 font-bold">11 Mars</span>
+                </div>
+                <div class="ml-4 mt-4 flex flex-col">
+                    <h3 class="font-semibold">Randonnée charmante ...</h3>
+                    <p class="text-green-400 text-sm font-light">Ninglinspo, 10km</p>
+                    <p class="text-sm font-light">Patrick <span>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-solid fa-star" style="color: #f5e324;"></i>
+                        <i class="fa-regular fa-star"></i>
+                        </span>
+                    </p>
+                    <p class=" mb-2 text-sm font-light">1/5 participants</p>
+                    <a class="text-center bg-green-500  px-8 no-underline text-white rounded-full max-w-fit">Infos</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <footer class="bg-white fixed bottom-0 w-screen h-16 flex justify-around items-center">
+        <i class="fa-solid fa-house" style="color: #000000;"></i>
+        <i class="fa-solid fa-user" style="color: #000000;"></i>
+        <i class="fa-solid fa-bookmark" style="color: #000000;"></i>
+        <i class="fa-solid fa-gear" style="color: #000000;"></i>
+    </footer>
+</template>
