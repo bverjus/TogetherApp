@@ -38,13 +38,12 @@ export const useActivitiesStore = defineStore({
         const response = await axios.get(`/api/getActivitiesWithDistances?lat=${LocationStore.getLatitude}&lon=${LocationStore.getLongitude}`)
         .then(response => {
             // Gérer la réponse
-            // Mise à jour du store avec les activités récupérées
             console.log('sjns');
             console.log(response.data);
             this.activities = response.data;
         })
         .catch(error => {
-            // Gérer les erreurs
+          
         });
       } catch (error) {
         console.error('Error fetching activities:', error);

@@ -20,7 +20,8 @@ class ActivityController extends Controller
     public function index()
     {
         $activities = Activity::with(['category', 'user'])->withCount('participants')->get();
-        return Inertia::render('Dashboard', ['activities' =>$activities]);
+        $categories = Category::all();
+        return Inertia::render('Dashboard', ['activities' =>$activities, "categories" => $categories]);
     }
 
     /**

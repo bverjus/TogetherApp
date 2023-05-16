@@ -6,7 +6,9 @@ import NearbyActivities from './NearbyActivities.vue';
 import NextActivites from './NextActivities.vue';
 import Footer from './Footer.vue';
 
-defineProps({activities :Array});
+defineProps({activities :Array,
+            categories :Array});
+
 </script>
 
 <template>
@@ -20,7 +22,7 @@ defineProps({activities :Array});
         </div>
 
         <!--categories-->
-        <Categories/>
+        <Categories :categories="categories"/>
         
 
         <!-- Activities Near  -->

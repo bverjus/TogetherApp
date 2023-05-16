@@ -28,7 +28,6 @@ const submitForm = async () => {
     console.log(data);
     await router.post('/activities/store', data);
     successMessage.value = 'Activité ajoutée avec succès';
-      successMessage.value = 'Activité ajoutée avec succès';
       setTimeout(() => {
         router.get('/dashboard');
       }, 2000);
